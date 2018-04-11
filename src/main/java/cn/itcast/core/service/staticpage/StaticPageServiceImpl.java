@@ -29,7 +29,7 @@ public class StaticPageServiceImpl implements StaticPageService,ServletContextAw
 		this.conf = freeMarkerConfigurer.getConfiguration();
 	}
 
-
+// 
 	//静态化方法
 	public void productIndex(Map<String,Object> root,Integer id){
 		//String dir = "C:\Users\lx\workspace\babasport12\";
