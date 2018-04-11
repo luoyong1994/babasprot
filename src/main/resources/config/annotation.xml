@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<!--spring 扫包   @Service .....-->
+	<context:component-scan base-package="cn.itcast">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+    <context:annotation-config/>
+	<!--配置service的包扫描，自动注入Service -->
+	<context:component-scan base-package="com.millery" />
+
+	<!-- 使用spring自带的占位符替换功能 -->
+	<!-- <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		允许JVM参数覆盖
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		忽略没有找到的资源文件
+		<property name="ignoreResourceNotFound" value="true" />
+		配置资源文件
+		<property name="locations">
+			<list>
+				<value>classpath:properties/solr.properties</value>
+			</list>
+		</property>
+<a target=_blank href="http://write.blog.csdn.net/User.java"><span style="color: rgb(0, 0, 255);"></span></a><pre name="code" class="html"><span style="white-space:pre"></span></bean> -->
+	
+</beans>
