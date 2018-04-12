@@ -16,6 +16,7 @@ public class Brand {
 	private Integer sort;
 	private Integer isDisplay;
 	
+	
 	//获取全路径
 	public String getAllUrl(){
 		return Constants.IMAGE_URL + imgUrl;
